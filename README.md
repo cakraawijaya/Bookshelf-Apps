@@ -13,8 +13,7 @@ Learn Front End Web Development for Beginners.
 ## Project Requirements
 | Part | Description |
 | --- | --- |
-| Code | HTML, CSS, & JS |
-| Tools | Visual Studio Code, XAMPP (PHP Version 5+)  |
+| Tools | • Visual Studio Code<br>• Xampp |
 
 <br><br>
 

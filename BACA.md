@@ -13,8 +13,7 @@ Belajar Pengembangan Web Front End untuk Pemula.
 ## Kebutuhan Proyek
 | Bagian | Deskripsi |
 | --- | --- |
-| Kode | HTML, CSS, & JS |
-| Peralatan | Visual Studio Code, XAMPP (PHP Versi 5+)  |
+| Peralatan | • Visual Studio Code<br>• Xampp |
 
 <br><br>
 
