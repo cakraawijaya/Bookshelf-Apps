@@ -4,7 +4,7 @@
 ![Project](https://img.shields.io/badge/Project-Website-light.svg?style=flat&logo=googlechrome&logoColor=white&color=%23F7DF1E)
 ![Type](https://img.shields.io/badge/Type-Course-light.svg?style=flat&logo=gitbook&logoColor=white&color=%23F7DF1E)
 
-# Bookshelf-Apps
+# Bookshelf Apps
 <strong>Penyerahan Tugas Dicoding</strong><br> 
 Belajar Pengembangan Web Front End untuk Pemula.
 
