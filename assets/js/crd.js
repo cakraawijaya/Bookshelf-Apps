@@ -36,11 +36,11 @@ function showData(books = []) {
                 <p>Tahun: ${book.year}</p>
 
                 <div class="action" style="margin-top: 30px;">
-                    <button class="green" onclick="readedBook('${book.id}')">
+                    <button class="green select-none" onclick="readedBook('${book.id}')">
                         <img class="agree-icon" style="top:10px;" src="assets/img/agree-icon.png" alt="agree-icon">&nbsp;
                         <span>Selesai dibaca</span>
                     </button>
-                    <button class="red" onclick="deleteBook('${book.id}')">
+                    <button class="red select-none" onclick="deleteBook('${book.id}')">
                         <img class="disagree-icon" style="top:10px;" src="assets/img/disagree-icon.png" alt="disagree-icon">&nbsp;
                         <span>Hapus buku</span>
                     </button>
@@ -57,11 +57,11 @@ function showData(books = []) {
                 <p>Tahun: ${book.year}</p>
 
                 <div class="action" style="margin-top: 30px;">
-                    <button class="green" onclick="unreadedBook('${book.id}')"> 
+                    <button class="green select-none" onclick="unreadedBook('${book.id}')"> 
                         <img class="agree-icon" style="top:10px;" src="assets/img/agree-icon.png" alt="agree-icon">&nbsp;
                         <span>Belum selesai dibaca</span>
                     </button>
-                    <button class="red" onclick="deleteBook('${book.id}')">
+                    <button class="red select-none" onclick="deleteBook('${book.id}')">
                         <img class="disagree-icon" style="top:10px;" src="assets/img/disagree-icon.png" alt="disagree-icon">&nbsp;
                         <span>Hapus buku</span>
                     </button>

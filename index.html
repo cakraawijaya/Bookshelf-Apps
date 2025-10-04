@@ -10,11 +10,11 @@
 <body>
 	<!-- HEADER -->
 	<header>
-		<div class="header-wrap">
+		<div class="header-wrap select-none">
 			<h1><img class="book-icon" style="top:10px;" src="assets/img/book-icon.png" alt="book-icon">&nbsp;&nbsp;<span>Bookshelf Apps</span></h1>
 			<p>Platform inventaris buku yang efektif karena penyimpanan rak seperti kantong doraemon</p>
 		</div>
-		<nav class="navbar">
+		<nav class="navbar select-none">
 			<center><p>By : Devan Cakra M. W</p></center>
 		</nav>
 	</header>
@@ -24,36 +24,38 @@
 		<div id="content">
 			<article class="content-w1">
 				<section class="input_section" id="inputSection">
-					<h2 id="h2InputSection">Masukkan Buku Baru<hr></h2>
+					<h2 id="h2InputSection" class="select-none">Masukkan Buku Baru<hr></h2>
 					<form id="inputBook">
-						<div class="input" id="sectionTitle">
+						<div class="input select-none" id="sectionTitle">
 							<label for="inputBookTitle">Judul</label>
 							<input id="inputBookTitle" type="text" placeholder="Masukkan judul buku"/>
 							<small class="error-display" id="errorTitle">Wajib Diisi</small>
 						</div>
-						<div class="input" id="sectionAuthor">
+						<div class="input select-none" id="sectionAuthor">
 							<label for="inputBookAuthor">Penulis</label>
 							<input id="inputBookAuthor" type="text" placeholder="Masukkan nama penulis buku"/>
 							<small class="error-display" id="errorAuthor">Wajib Diisi</small>
 						</div>
-						<div class="input" id="sectionYear">
+						<div class="input select-none" id="sectionYear">
 							<label for="inputBookYear">Tahun</label>
 							<input id="inputBookYear" type="number" placeholder="Masukkan tahun terbit buku"/>
 							<small class="error-display" id="errorYear">Wajib Diisi</small>
 						</div>
-						<div class="input_inline" style="margin-top: 30px;">
+						<div class="input_inline select-none" style="margin-top: 40px;">
 							<label for="inputBookIsComplete">Selesai dibaca</label>
 							<input id="inputBookIsComplete" type="checkbox" />
 						</div>
-						<button id="bookSubmit" type="button"><img class="add-icon" style="top:10px;" src="assets/img/add-icon.png" alt="add-icon">&nbsp;&nbsp;
-						<span>Masukkan Buku</span></button>
+						<button id="bookSubmit" class="select-none" type="button">
+							<img class="add-icon" style="top:10px;" src="assets/img/add-icon.png" alt="add-icon">&nbsp;&nbsp;
+							<span>Masukkan Buku</span>
+						</button>
 					</form>
 				</section>
 			</article>
 		
 			<article class="content-w2">
 				<section class="book_shelf" id="bookShelfUncompleted">
-					<h2 id="uncompletedH2">Belum selesai dibaca
+					<h2 id="uncompletedH2" class="select-none">Belum selesai dibaca
 						<hr>
 					</h2>
 				
@@ -65,14 +67,16 @@
 		<aside>
 			<article class="content-aw1">
 				<section class="search_section book_shelf" id="searchSection">
-					<h2 id="searchSectionH2">Cari Buku
+					<h2 id="searchSectionH2" class="select-none">Cari Buku
 						<hr>
 					</h2>
 					<form id="searchBook">
-						<label for="searchBookTitle">Keyword</label>
-						<input id="searchBookTitle" type="text" placeholder="Pencarian Data"/>
-						<button id="searchSubmit" type="submit"><img class="search-icon" style="top:10px;" src="assets/img/search-icon.png" alt="search-icon">&nbsp;
-						<span>Cari</span></button>
+						<label for="searchBookTitle" class="select-none">Keyword</label>
+						<input id="searchBookTitle" class="select-none" type="text" placeholder="Pencarian Data"/>
+						<button id="searchSubmit" class="select-none" type="submit">
+							<img class="search-icon" style="top:10px;" src="assets/img/search-icon.png" alt="search-icon">&nbsp;
+							<span>Cari</span>
+						</button>
 					</form>
 				
 					<div id="searchResult" class="book_list" style="width: 100%"></div>
@@ -80,7 +84,7 @@
 			</article>
 			<article class="content-aw2">
 				<section class="book_shelf" id="bookShelfCompleted">
-					<h2 id="completedH2">Selesai dibaca<hr></h2>
+					<h2 id="completedH2" class="select-none">Selesai dibaca<hr></h2>
 				
 					<div id="completeBookshelfList" class="book_list"></div>
 				</section>
@@ -95,11 +99,11 @@
 			<table>
 				<tr>
 					<td class="cf-left">
-						Copyright © 2021 | All rights Reserved Bookshelf Apps
+						<label class="select-none">Copyright &copy; 2021 | All rights Reserved Bookshelf Apps</label>
 					</td>
 					<td class="cf-right">
 						<div class="scroll-w">
-							<input type="image" class="scrollup" onclick="myScrollup()" id="scrollup" title="Go to top" src="assets/img/scroll-up.gif" alt="scroll-up"></input>
+							<input type="image" class="scrollup select-none" onclick="myScrollup()" id="scrollup" title="Go to top" src="assets/img/scroll-up.gif" alt="scroll-up"></input>
 						</div>
 					</td>
 				</tr>
