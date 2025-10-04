@@ -34,13 +34,19 @@ function showSearchResult(books) {
     books.forEach(book => {
         let el = `
         <article class="book_item">
-            <h3>Hasil Pencarian :</h3><p class="search">Pencarian menunjukkan bahwa data berasal dari buku "${book.title}" </p>
+            <h3>Hasil Pencarian :</h3>
+            <p class="search">Pencarian menunjukkan bahwa data berasal dari buku "${book.title}" </p>
             <h3>${book.title}</h3>
             <p>Penulis: ${book.author}</p>
             <p>Tahun: ${book.year}</p>
-            <p class="ket">Keterangan : <span>${book.isCompleted ? 'Sudah dibaca' : 'Belum selesai dibaca'}</span></p>
+            <p class="ket">
+                Keterangan : 
+                <span class="${book.isCompleted ? 'sudah' : 'belum'}">
+                    ${book.isCompleted === 'Sudah dibaca' ? 'Sudah dibaca' : 'Belum selesai dibaca'}
+                </span>
+            </p>
         </article>
-        `
+        `;
 
         searchResult.innerHTML += el;
     });

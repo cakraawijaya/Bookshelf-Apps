@@ -92,6 +92,8 @@ main {
 #content,
 aside {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .content-w1,
@@ -110,10 +112,16 @@ aside {
   padding: 10px;
   width: 100%;
   max-width: 550px;
-  min-height: auto;
+  min-height: 420px;
+  height: auto;
   box-sizing: border-box;
   margin: 0 auto 25px auto;
   transition: all 0.3s ease;
+}
+
+.content-w2,
+.content-aw2 {
+  flex: 1;
 }
 
 .input_section > h2 {
@@ -245,17 +253,26 @@ p {
 }
 
 .book_shelf > .book_list > .book_item > .ket > span {
-  padding: 5px;
-  background: linear-gradient(-45deg, rgba(43, 81, 112), rgb(7, 146, 65));
+  line-height: 2;
   font-size: 14px;
-  border-radius: 5px;
+  border-radius: 40px;
+  padding: 1px 8px;
+  display: inline-block;
   color: white;
+}
+
+.book_shelf > .book_list > .book_item > .ket > span.sudah {
+    background: linear-gradient(-45deg, rgba(43,81,112,1), rgb(7,146,65));
+}
+
+.book_shelf > .book_list > .book_item > .ket > span.belum {
+    background: linear-gradient(-45deg, rgba(43,81,112,1), rgb(221,32,11));
 }
 
 .book_shelf > .book_list > .book_item > .search {
   margin-bottom: 25px;
-  padding: 5px;
-  background: linear-gradient(-45deg, rgba(43, 81, 112), rgb(221, 32, 11));
+  padding: 10px;
+  background: linear-gradient(-45deg, rgba(45, 122, 255, 1), rgba(43, 81, 112));
   font-size: 14px;
   border-radius: 5px;
   color: white;
@@ -432,14 +449,27 @@ footer {
     text-align: center;
   }
 
-  .cf-left, .cf-right {
+  .cf-left {
+    width: 98%;
+    padding-right: 50px;
+  }
+
+  .cf-right {
     width: 100%;
     padding: 0;
   }
-
+  
   .scrollup {
     height: 45px;
     width: 45px;
     margin: 0 auto;
+  }
+
+  .book_shelf > .book_list > .book_item > .action > .green {
+    width: 100%;
+  }
+
+  .book_shelf > .book_list > .book_item > .action > .red {
+    width: 100%;
   }
 }
