@@ -1,16 +1,18 @@
 function insertData(book) {
     let bookData = [];
 
-    if (localStorage.getItem(localStorageKey) === "") {
-        alert(`Data buku [GAGAL DITAMBAHKAN]`);
-        localStorage.setItem(localStorageKey, 0);
-    }else{
+    const storedData = localStorage.getItem(localStorageKey);
+
+    if (!storedData) {
         alert(`Data buku [BERHASIL DITAMBAHKAN]`);
-        bookData = JSON.parse(localStorage.getItem(localStorageKey));
+        bookData = [];
+    } else {
+        alert(`Data buku [BERHASIL DITAMBAHKAN]`);
+        bookData = JSON.parse(storedData);
     }
 
     bookData.unshift(book);
-    localStorage.setItem(localStorageKey,JSON.stringify(bookData));
+    localStorage.setItem(localStorageKey, JSON.stringify(bookData));
 
     showData(getData());
 }
@@ -26,11 +28,9 @@ function showData(books = []) {
     inCompleted.innerHTML = '';
     completed.innerHTML = '';
 
-    // Filter buku berdasarkan status
     const incompleteBooks = books.filter(book => book.isCompleted == false);
     const completeBooks = books.filter(book => book.isCompleted == true);
 
-    // Tampilkan buku belum selesai dibaca
     if (incompleteBooks.length > 0) {
         incompleteBooks.forEach(book => {
             let el = `
@@ -66,7 +66,6 @@ function showData(books = []) {
         `;
     }
 
-    // Tampilkan buku sudah selesai dibaca
     if (completeBooks.length > 0) {
         completeBooks.forEach(book => {
             let el = `
@@ -103,7 +102,6 @@ function showData(books = []) {
     }
 }
 
-// Pastikan memanggil showData saat halaman load
 document.addEventListener('DOMContentLoaded', function() {
     showData(getData());
 });
