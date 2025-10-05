@@ -12,9 +12,9 @@
 }
 
 .text-muted {
-    color: #272b2dff;
-    font-size: 0.9rem;
-    margin-top: 5px;
+  color: #272b2dff;
+  font-size: 0.9rem;
+  margin-top: 5px;
 }
 
 h1, h2 {
@@ -258,6 +258,10 @@ p {
   cursor: pointer;
 }
 
+.book_shelf > .book_list > .book_item > .ket {
+  text-align: left;
+}
+
 .book_shelf > .book_list > .book_item > .ket > span {
   line-height: 2;
   font-size: 14px;
@@ -265,23 +269,29 @@ p {
   padding: 1px 8px;
   display: inline-block;
   color: white;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  margin-top: 8px;
 }
 
 .book_shelf > .book_list > .book_item > .ket > span.sudah {
-    background: linear-gradient(-45deg, rgba(43,81,112,1), rgb(7,146,65));
+  background: linear-gradient(-45deg, rgba(43,81,112,1), rgb(7,146,65));
 }
 
 .book_shelf > .book_list > .book_item > .ket > span.belum {
-    background: linear-gradient(-45deg, rgba(43,81,112,1), rgb(221,32,11));
+  background: linear-gradient(-45deg, rgba(43,81,112,1), rgb(221,32,11));
 }
 
 .book_shelf > .book_list > .book_item > .search {
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   padding: 10px;
   background: linear-gradient(-45deg, rgba(45, 122, 255, 1), rgba(43, 81, 112));
   font-size: 14px;
   border-radius: 5px;
   color: white;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: left;
 }
 
 .book_shelf > .book_list > .book_item > .not-found {
@@ -378,6 +388,15 @@ footer {
 
 
 
+@media screen and (max-width: 900px) {
+    .book_shelf > .book_list > .book_item > .search {
+        font-size: 13px;
+        padding: 8px;
+    }
+}
+
+
+
 @media screen and (max-width: 600px) {
 
   .header-wrap {
@@ -448,6 +467,15 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 10px;
+  }
+
+  .book_shelf > .book_list > .book_item > .search {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  #searchBookTitle, #searchSubmit {
+    line-height: 2;
   }
 
   .input_inline {
