@@ -11,6 +11,12 @@
   -ms-user-select: none;
 }
 
+.text-muted {
+    color: #272b2dff;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
 h1, h2 {
   text-align: center;
 }
@@ -273,6 +279,14 @@ p {
   margin-bottom: 25px;
   padding: 10px;
   background: linear-gradient(-45deg, rgba(45, 122, 255, 1), rgba(43, 81, 112));
+  font-size: 14px;
+  border-radius: 5px;
+  color: white;
+}
+
+.book_shelf > .book_list > .book_item > .not-found {
+  padding: 10px;
+  background: linear-gradient(-45deg, rgba(43,81,112,1), rgb(221,32,11));
   font-size: 14px;
   border-radius: 5px;
   color: white;

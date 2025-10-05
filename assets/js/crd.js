@@ -1,7 +1,6 @@
 function insertData(book) {
     let bookData = [];
 
-
     if (localStorage.getItem(localStorageKey) === "") {
         alert(`Data buku [GAGAL DITAMBAHKAN]`);
         localStorage.setItem(localStorageKey, 0);
@@ -27,8 +26,13 @@ function showData(books = []) {
     inCompleted.innerHTML = '';
     completed.innerHTML = '';
 
-    books.forEach(book => {
-        if (book.isCompleted == false) {
+    // Filter buku berdasarkan status
+    const incompleteBooks = books.filter(book => book.isCompleted == false);
+    const completeBooks = books.filter(book => book.isCompleted == true);
+
+    // Tampilkan buku belum selesai dibaca
+    if (incompleteBooks.length > 0) {
+        incompleteBooks.forEach(book => {
             let el = `
             <article class="book_item">
                 <h3 style="text-align:justify;">${book.title}</h3>
@@ -46,10 +50,25 @@ function showData(books = []) {
                     </button>
                 </div>
             </article>
-            `
-
+            `;
             inCompleted.innerHTML += el;
-        }else{
+        });
+    } else {
+        inCompleted.innerHTML = `
+        <article class="book_item empty">
+            <h3 style="text-align: center; color: red; margin: 20px 0;">
+                [BELUM ADA DATA]
+            </h3>
+            <p style="text-align: center; color: red; margin: 20px 0;">
+                HARAP TAMBAHKAN DATA TERLEBIH DAHULU !!
+            </p>
+        </article>
+        `;
+    }
+
+    // Tampilkan buku sudah selesai dibaca
+    if (completeBooks.length > 0) {
+        completeBooks.forEach(book => {
             let el = `
             <article class="book_item">
                 <h3 style="text-align:justify;">${book.title}</h3>
@@ -67,11 +86,27 @@ function showData(books = []) {
                     </button>
                 </div>
             </article>
-            `
+            `;
             completed.innerHTML += el;
-        }
-    });
+        });
+    } else {
+        completed.innerHTML = `
+        <article class="book_item empty">
+            <h3 style="text-align: center; color: red; margin: 20px 0;">
+                [BELUM ADA DATA]
+            </h3>
+            <p style="text-align: center; color: red; margin: 20px 0;">
+                HARAP TAMBAHKAN DATA TERLEBIH DAHULU !!
+            </p>
+        </article>
+        `;
+    }
 }
+
+// Pastikan memanggil showData saat halaman load
+document.addEventListener('DOMContentLoaded', function() {
+    showData(getData());
+});
 
 function deleteBook(id) {
     let cfm = confirm("Anda yakin akan menghapus data buku ini ?");
