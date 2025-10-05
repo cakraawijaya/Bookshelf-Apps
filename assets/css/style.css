@@ -389,16 +389,32 @@ footer {
 
 
 @media screen and (max-width: 900px) {
-    .book_shelf > .book_list > .book_item > .search {
-        font-size: 13px;
-        padding: 8px;
-    }
+  .book_shelf > .book_list > .book_item > .search {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  #searchBookTitle {
+    line-height: 2;
+  }
+
+  .search_section > form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search_section > form > button {
+    width: 100%;
+    line-height: 1;
+    padding: 8px;
+    text-align: center;
+  }
 }
 
 
 
 @media screen and (max-width: 600px) {
-
   .header-wrap {
     font-size: 16px;
     padding: 15px 10px;
