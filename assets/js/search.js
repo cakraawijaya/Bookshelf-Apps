@@ -1,10 +1,10 @@
 btnSearch.addEventListener("click", function(e) {
     e.preventDefault();
     const searchResult = document.querySelector("#searchResult");
-    searchResult.innerHTML = ''; // Bersihkan hasil sebelumnya
+    searchResult.innerHTML = '';
 
     if (!localStorage.getItem(localStorageKey) || localStorage.getItem(localStorageKey) === "[]") {    
-        showSearchResult([]); // Tidak ada data sama sekali
+        showSearchResult([]);
         searchValue.value = '';
         return;
     }
