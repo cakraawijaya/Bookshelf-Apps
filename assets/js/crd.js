@@ -59,7 +59,7 @@ function showData(books = []) {
             <h3 style="text-align: center; color: red; margin: 20px 0;">
                 [BELUM ADA DATA]
             </h3>
-            <p style="text-align: center; color: red; margin: 20px 0;">
+            <p class="p-empty">
                 HARAP TAMBAHKAN DATA TERLEBIH DAHULU !!
             </p>
         </article>
@@ -94,7 +94,7 @@ function showData(books = []) {
             <h3 style="text-align: center; color: red; margin: 20px 0;">
                 [BELUM ADA DATA]
             </h3>
-            <p style="text-align: center; color: red; margin: 20px 0;">
+            <p class="p-empty">
                 HARAP TAMBAHKAN DATA TERLEBIH DAHULU !!
             </p>
         </article>

@@ -4,6 +4,49 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  height: 100%;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+h2 {
+  color: rgb(0, 0, 0);
+  padding-top: 20px;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, rgba(43,81,112,1), rgba(82, 113, 130, 1));
+  border-radius: 5px;
+  margin: 4px 10px 8px 10px;
+}
+
+.book-icon {
+  height: 30px;
+  width: 28px;
+  padding-top: 4px;
+  background-size: cover;
+  filter: invert(100%);
+  margin: 0 auto;
+}
+
+.add-icon, .search-icon, .agree-icon, .disagree-icon {
+  height: 20px;
+  width: 18px;
+  padding-top: 4px;
+  background-size: cover;
+  filter: invert(100%);
+  margin: 0 auto;
+}
+
 .select-none {
   user-select: none;
   -webkit-user-select: none;
@@ -17,62 +60,50 @@
   margin-top: 5px;
 }
 
-h1, h2 {
-  text-align: center;
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 25px;
 }
 
-body,
-input,
-button {
-  font-family: "Open Sans", sans-serif;
-}
-
-input,
-button {
-  font-size: 16px;
+.col {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  min-width: 300px;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background: linear-gradient(-45deg, rgba(255, 102, 0, 0.6), rgba(180, 182, 67, 0.8));
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+}
+
+body, input, button {
+  font-family: "Open Sans", sans-serif;
+}
+
+input, button {
+  font-size: 16px;
 }
 
 header {
-  display: inline;
-}
-
-.navbar {
-  background: linear-gradient(-45deg, rgba(143, 83, 255), rgba(255, 0, 149));
-  padding: 5px;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  font-weight: bold;
-  color: white;
-  font-size: 14px;
-}
-
-.clear {
-  clear: left;
-}
-
-html {
-  scroll-behavior: smooth;
+  display: block;
 }
 
 .header-wrap {
   font-size: 20px;
-  padding: 30px;
-  background: linear-gradient(-45deg, rgba(255, 94, 0, 6), rgba(170, 0, 0, 0.8));
-  text-align: center;
   color: white;
+  text-align: center;
+  background: linear-gradient(-45deg, rgba(255, 94, 0, 6), rgba(170, 0, 0, 0.8));
+  padding: 30px;
 }
 
 .header-wrap p {
@@ -80,177 +111,145 @@ html {
   letter-spacing: 3px;
 }
 
+.navbar {
+  position: sticky;
+  font-size: 15px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  background: linear-gradient(-45deg, rgba(143, 83, 255), rgba(255, 0, 149));
+  z-index: 999;
+  top: 0;
+  padding: 5px;
+}
+
 main {
   flex: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 25px;
-  margin-top: 25px;
-  margin-left: 25px;
-  margin-right: 25px;
-  box-sizing: border-box;
-  overflow: hidden;
-  justify-content: center;
-  align-items: stretch;
-  transition: all 0.3s ease;
-}
-
-#content,
-aside {
-  width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  margin: 0 auto;
+  padding: 25px;
 }
 
-.content-w1,
-.content-w2,
-.content-aw1,
-.content-aw2 {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  border: 5px solid;
-  border-top-color: #919191;
-  border-right-color: #111111;
-  border-bottom-color: #4ee717;
-  border-left-color: #00c8eb;
-  text-align: justify;
-  overflow: auto;
-  padding: 10px;
+.article-1, .article-3, .article-2, .article-4 {
   width: 100%;
-  max-width: 550px;
   min-height: 420px;
   height: auto;
-  box-sizing: border-box;
-  margin: 0 auto 25px auto;
-  transition: all 0.3s ease;
+  text-align: justify;
+  justify-content: space-between;
+  border: 5px solid;
+  border-radius: 5px;
+  border-image: linear-gradient(45deg, #919191, #00c8eb, #4ee717, #111111) 1;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 10px;
 }
 
-.content-w2,
-.content-aw2 {
+.article-2, .article-4 {
   flex: 1;
 }
 
-.input_section > h2 {
-  padding-top: 20px;
-  text-align: center;
-  color: rgb(0, 0, 0);
-}
 
-.input_section > #inputBook {
+/* Container article-1 */
+.article-1 > section > form {
   padding: 10px;
 }
 
-.input_section > form > .input {
+.article-1 > section > form > .input {
   margin: 8px 0;
 }
 
-.input_section > form > button {
-  background: linear-gradient(-45deg, rgba(43, 81, 112), rgb(0, 61, 192));
-  color: white;
-  border: 0;
-  border-radius: 5px;
-  display: block;
-  width: 100%;
-  padding: 8px;
-  cursor: pointer;
-}
-
-.input_section > form > button:hover {
-  border: 2px rgb(0, 225, 255) solid;
-}
-
-.input_section > form > button > span {
+.article-1 > section > form > .input > label {
+  color: rgb(0, 0, 0);
   font-weight: bold;
 }
 
-.input_section > form > .input > input {
+.article-1 > section > form > .input > input {
   display: block;
   width: 100%;
   padding: 8px;
   border-radius: 5px;
 }
 
-.input_section > form > .input > label {
-  color: rgb(0, 0, 0);
-  font-weight: bold;
+.error {
+  border: 2px solid red;
 }
 
-.input_section > form > .input_inline {
-  margin: 15px 0;
+.article-1 > section > form > .input > small {
+  color: red;
+}
+
+.article-1 > section > form > .input > .error-display {
+  display: none;
+}
+
+.article-1 > section > form > .checkbox {
   display: flex;
   align-items: center;
-}
-
-.input_section > form > .input_inline > label {
+  margin-top: 40px;
+  gap: 10px;
   color: rgb(0, 0, 0);
   font-weight: bold;
-  margin-right: 10px;
 }
 
-.search_section > h2 {
-  padding-top: 20px;
-  color: rgb(0, 0, 0);
-}
-
-.search_section > form {
-  padding: 16px;
+.article-1 > section > form > button {
+  display: block;
   width: 100%;
-  display: grid;
-  grid-template-columns: auto 1fr 0.5fr;
-  grid-gap: 10px;
-  margin-bottom: -20px;
-}
-
-.search_section > form > label {
-  display: flex;
-  align-items: center;
-  color: rgb(0, 0, 0);
+  padding: 8px;
+  margin-top: 15px;
+  color: white;
   font-weight: bold;
-  margin-right: 10px;
-}
-
-.search_section > form > input {
-  padding: 5px;
-  border-radius: 5px;
-}
-
-.search_section > form > button {
-  background: linear-gradient(-45deg, rgba(43, 81, 112), rgb(0, 61, 192));
   border: 0;
   border-radius: 5px;
-  color: white;
-  display: block;
+  background: linear-gradient(-45deg, rgba(43, 81, 112), rgb(0, 61, 192));
   cursor: pointer;
 }
 
-.search_section > form > button:hover {
+.article-1 > section > form > button:hover {
   border: 2px rgb(0, 225, 255) solid;
 }
 
-.book_shelf > h2 {
-  padding-top: 20px;
-  color: rgb(0, 0, 0);
+
+/* Container article-2 dan article-4 */
+.article-2 > section,
+.article-4 > section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
-.book_shelf > .book_list {
+.article-2 > section > label,
+.article-4 > section > label {
+  display: flex;
+  align-items: center;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+.article-2 > section > .book_list,
+.article-4 > section > .book_list {
+  width: 100%;
   padding: 16px;
 }
 
-.book_shelf > .book_list > .book_item {
+.article-2 > section > .book_list > .book_item,
+.article-4 > section > .book_list > .book_item {
   padding: 8px 16px 16px 16px;
   border: 1px solid black;
   border-radius: 5px;
   margin: 10px 0;
 }
 
-.book_shelf > .book_list > .book_item > h3,
-p {
+.article-2 > section > .book_list > .book_item > h3, p,
+.article-4 > section > .book_list > .book_item > h3, p {
   margin: 8px 0;
   overflow: hidden;
   word-wrap: break-word;
 }
 
-.book_shelf > .book_list > .book_item > .action > button {
+.article-2 > section > .book_list > .book_item > .action > button,
+.article-4 > section > .book_list > .book_item > .action > button {
   border: 0;
   padding: 5px;
   margin: 0 5px 0 0;
@@ -258,11 +257,117 @@ p {
   cursor: pointer;
 }
 
-.book_shelf > .book_list > .book_item > .ket {
+/* Tombol "Selesai dibaca" dan "Belum selesai dibaca" */
+.article-2 > section > .book_list > .book_item > .action > .green,
+.article-4 > section > .book_list > .book_item > .action > .green {
+  background: linear-gradient(-45deg, rgba(43, 81, 112), rgb(7, 146, 65));
+  border: 2px black solid;
+  color: white;
+}
+
+/* Hover Tombol untuk "Selesai dibaca" dan "Belum selesai dibaca" */
+.article-2 > section > .book_list > .book_item > .action > .green:hover,
+.article-4 > section > .book_list > .book_item > .action > .green:hover {
+  border: 2px rgb(0, 255, 42) solid;
+}
+
+/* Tombol "Hapus buku" */
+.article-2 > section > .book_list > .book_item > .action > .red,
+.article-4 > section > .book_list > .book_item > .action > .red {
+  background: linear-gradient(-45deg, rgba(43, 81, 112), rgb(221, 32, 11));
+  border: 2px black solid;
+  color: white;
+  margin-top: 10px;
+}
+
+/* Hover untuk Tombol "Hapus buku" */
+.article-2 > section > .book_list > .book_item > .action > .red:hover,
+.article-4 > section > .book_list > .book_item > .action > .red:hover {
+  border: 2px rgb(218, 15, 0) solid;
+}
+
+.article-2 > section > .book_list > .book_item > .p-empty,
+.article-4 > section > .book_list > .book_item > .p-empty {
+  font-size: 14px;
+  color: white;
+  text-align: center;
+  margin: 10px 0;
+  padding: 25px;
+  background: linear-gradient(-45deg, rgba(43,81,112,1), rgb(221,32,11));
+  border-radius: 5px;
+}
+
+/* Container article-3 */
+.article-3 > section > form {
+  display: grid;
+  grid-template-columns: auto 1fr 0.5fr;
+  grid-gap: 10px;
+  width: 100%;
+  margin-bottom: -20px;
+  padding: 16px;
+}
+
+.article-3 > section > form > label {
+  display: flex;
+  align-items: center;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  margin-right: 10px;
+  margin-top: 8px;
+}
+
+.article-3 > section > form > input {
+  padding: 5px;
+  margin-top: 8px;
+  border-radius: 5px;
+}
+
+.article-3 > section > form > button {
+  background: linear-gradient(-45deg, rgba(43, 81, 112), rgb(0, 61, 192));
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  display: block;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.article-3 > section > form > button:hover {
+  border: 2px rgb(0, 225, 255) solid;
+}
+
+.article-3 > section > .book_list {
+  width: 100%;
+  padding: 16px;
+}
+
+.article-3 > section > .book_list > .book_item {
+  padding: 8px 16px 16px 16px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.article-3 > section > .book_list > .book_item > h3,
+p {
+  margin: 8px 0;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.article-3 > section > .book_list > .book_item > .action > button {
+  border: 0;
+  padding: 5px;
+  margin: 0 5px 0 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.article-3 > section > .book_list > .book_item > .ket {
   text-align: left;
 }
 
-.book_shelf > .book_list > .book_item > .ket > span {
+.article-3 > section > .book_list > .book_item > .ket > span {
   line-height: 2;
   font-size: 14px;
   border-radius: 40px;
@@ -274,15 +379,15 @@ p {
   margin-top: 8px;
 }
 
-.book_shelf > .book_list > .book_item > .ket > span.sudah {
+.article-3 > section > .book_list > .book_item > .ket > span.sudah {
   background: linear-gradient(-45deg, rgba(43,81,112,1), rgb(7,146,65));
 }
 
-.book_shelf > .book_list > .book_item > .ket > span.belum {
+.article-3 > section > .book_list > .book_item > .ket > span.belum {
   background: linear-gradient(-45deg, rgba(43,81,112,1), rgb(221,32,11));
 }
 
-.book_shelf > .book_list > .book_item > .search {
+.article-3 > section > .book_list > .book_item > .search {
   margin-bottom: 15px;
   padding: 10px;
   background: linear-gradient(-45deg, rgba(45, 122, 255, 1), rgba(43, 81, 112));
@@ -294,7 +399,7 @@ p {
   text-align: left;
 }
 
-.book_shelf > .book_list > .book_item > .not-found {
+.article-3 > section > .book_list > .book_item > .not-found {
   padding: 10px;
   background: linear-gradient(-45deg, rgba(43,81,112,1), rgb(221,32,11));
   font-size: 14px;
@@ -302,61 +407,31 @@ p {
   color: white;
 }
 
-.book_shelf > .book_list > .book_item > .action > .green {
+.article-3 > section > .book_list > .book_item > .action > .green {
   background: linear-gradient(-45deg, rgba(43, 81, 112), rgb(7, 146, 65));
   border: 2px black solid;
   color: white;
 }
 
-.book_shelf > .book_list > .book_item > .action > .red {
+.article-3 > section > .book_list > .book_item > .action > .red {
   background: linear-gradient(-45deg, rgba(43, 81, 112), rgb(221, 32, 11));
   border: 2px black solid;
   color: white;
   margin-top: 10px;
 }
 
-.book_shelf > .book_list > .book_item > .action > .green:hover {
+.article-3 > section > .book_list > .book_item > .action > .green:hover {
   border: 2px rgb(0, 255, 42) solid;
 }
 
-.book_shelf > .book_list > .book_item > .action > .red:hover {
+.article-3 > section > .book_list > .book_item > .action > .red:hover {
   border: 2px rgb(218, 15, 0) solid;
 }
 
-.error {
-  border: 2px solid red;
-}
 
-small {
-  color: red;
-}
-
-.error-display {
-  display: none;
-}
-
-.book-icon {
-  height: 30px;
-  width: 28px;
-  padding-top: 4px;
-  background-size: cover;
-  filter: invert(100%);
-  margin: 0 auto;
-}
-
-.add-icon,
-.search-icon,
-.agree-icon,
-.disagree-icon {
-  height: 20px;
-  width: 18px;
-  padding-top: 4px;
-  background-size: cover;
-  filter: invert(100%);
-  margin: 0 auto;
-}
-
+/* Container footer */
 footer {
+  flex-shrink: 0;
   padding: 20px;
   color: white;
   background: linear-gradient(-45deg, rgba(255, 94, 0, 0.6), rgba(170, 0, 0, 0.8));
@@ -387,7 +462,7 @@ footer {
 }
 
 
-
+/* Tampilan Tablet */
 @media screen and (max-width: 900px) {
   .book_shelf > .book_list > .book_item > .search {
     font-size: 13px;
@@ -398,13 +473,13 @@ footer {
     line-height: 2;
   }
 
-  .search_section > form {
+  .article-3 > section > form {
     display: flex;
     flex-direction: column;
     gap: 10px;
   }
 
-  .search_section > form > button {
+  .article-3 > section > form > button {
     width: 100%;
     line-height: 1;
     padding: 8px;
@@ -413,7 +488,7 @@ footer {
 }
 
 
-
+/* Tampilan Mobile */
 @media screen and (max-width: 600px) {
   .header-wrap {
     font-size: 16px;
@@ -453,24 +528,14 @@ footer {
     gap: 15px;
   }
 
-  #content {
+  .left-column, .right-column {
     display: flex;
     flex-direction: column;
     gap: 15px;
     width: 100%;
   }
 
-  aside {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-  }
-
-  .content-w1,
-  .content-w2,
-  .content-aw1,
-  .content-aw2 {
+  .article-1, .article-2, .article-3, .article-4 {
     width: 100%;
     max-width: 100%;
     min-height: auto;
@@ -478,8 +543,8 @@ footer {
     box-sizing: border-box;
   }
 
-  .input_section form, 
-  .search_section form {
+  .article-1 > section > form,
+  .article-3 > section > form {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -494,39 +559,7 @@ footer {
     line-height: 2;
   }
 
-  .input_inline {
-    align-items: flex-start;
-    margin-top: 10px;
-  }
-
-  footer table {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    text-align: center;
-  }
-
-  .cf-left {
-    width: 98%;
-    padding-right: 50px;
-  }
-
-  .cf-right {
-    width: 100%;
-    padding: 0;
-  }
-  
-  .scrollup {
-    height: 45px;
-    width: 45px;
-    margin: 0 auto;
-  }
-
-  .book_shelf > .book_list > .book_item > .action > .green {
-    width: 100%;
-  }
-
+  .book_shelf > .book_list > .book_item > .action > .green,
   .book_shelf > .book_list > .book_item > .action > .red {
     width: 100%;
   }
