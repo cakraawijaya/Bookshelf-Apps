@@ -60,7 +60,7 @@ function showData(books = []) {
                 [BELUM ADA DATA]
             </h3>
             <p class="p-empty">
-                HARAP TAMBAHKAN DATA TERLEBIH DAHULU !!
+                Harap Tambahkan Data Terlebih Dahulu !!
             </p>
         </article>
         `;
@@ -95,7 +95,7 @@ function showData(books = []) {
                 [BELUM ADA DATA]
             </h3>
             <p class="p-empty">
-                HARAP TAMBAHKAN DATA TERLEBIH DAHULU !!
+                Harap Tambahkan Data Terlebih Dahulu !!
             </p>
         </article>
         `;

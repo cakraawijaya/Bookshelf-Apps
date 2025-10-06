@@ -7,117 +7,110 @@
 		<link rel="stylesheet" href="assets/css/style.css">
 		<link rel="index" type="html" href="index.html">
 	</head>
-<body>
-	<!-- HEADER -->
-	<header>
-		<div class="header-wrap select-none">
-			<h1>
-				<img class="book-icon" style="top:10px;" src="assets/img/book-icon.png" alt="book-icon">
-				&nbsp;&nbsp;<span>Bookshelf Apps</span>
-			</h1>
-			<p>
-				Platform inventaris buku yang efektif karena penyimpanan rak seperti kantong doraemon
-			</p>
-		</div>
-		<nav class="navbar select-none">
-			<p>
-				By : Devan Cakra M. W
-			</p>
-		</nav>
-	</header>
 
-	<!-- BODY -->
-	<main>
-		<div class="row">
-			<div class="col">
-				<article class="article-1">
-					<section>
-						<h2 class="select-none">Masukkan Buku Baru</h2><hr/>
-						<form>
-							<div class="input select-none" id="sectionTitle">
-								<label>Judul</label>
-								<input id="inputBookTitle" type="text" placeholder="Masukkan judul buku"/>
-								<small class="error-display" id="errorTitle">*Wajib Diisi</small>
-							</div>
-							<div class="input select-none" id="sectionAuthor">
-								<label>Penulis</label>
-								<input id="inputBookAuthor" type="text" placeholder="Masukkan nama penulis buku"/>
-								<small class="error-display" id="errorAuthor">*Wajib Diisi</small>
-							</div>
-							<div class="input select-none" id="sectionYear">
-								<label>Tahun</label>
-								<input id="inputBookYear" type="number" placeholder="Masukkan tahun terbit buku"/>
-								<small class="error-display" id="errorYear">*Wajib Diisi</small>
-							</div>
-							<div class="checkbox select-none">
-								<label>Selesai dibaca</label>
-								<input id="inputBookIsComplete" type="checkbox" />
-							</div>
-							<button id="bookSubmit" class="select-none" type="button">
-								<img class="add-icon" style="top:10px;" src="assets/img/add-icon.png" alt="add-icon">
-								&nbsp;&nbsp;<span>Masukkan Buku</span>
-							</button>
-						</form>
-					</section>
-				</article>
-			
-				<article class="article-2">
-					<section>
-						<h2 class="select-none">Belum selesai dibaca</h2><hr/>			
-						<div id="incompleteBookshelfList" class="book_list"></div>
-					</section>
-				</article>
+	<body>
+		<header>
+			<div class="header-wrap select-none">
+				<h1>
+					<img class="book-icon" style="top:10px;" src="assets/img/book-icon.png" alt="book-icon">
+					&nbsp;&nbsp;<span>Bookshelf Apps</span>
+				</h1>
+				<p>
+					Platform inventaris buku yang efektif karena penyimpanan rak seperti kantong doraemon
+				</p>
 			</div>
+			<nav class="navbar select-none">
+				<p>
+					By : Devan Cakra M. W
+				</p>
+			</nav>
+		</header>
+
+		<main>
+			<div class="row">
+				<div class="col">
+					<article class="article-1">
+						<section>
+							<h2 class="select-none">Masukkan Buku Baru</h2><hr/>
+							<form>
+								<div class="input select-none" id="sectionTitle">
+									<label>Judul</label>
+									<input id="inputBookTitle" type="text" placeholder="Masukkan judul buku"/>
+									<small class="error-display" id="errorTitle">*Wajib Diisi</small>
+								</div>
+								<div class="input select-none" id="sectionAuthor">
+									<label>Penulis</label>
+									<input id="inputBookAuthor" type="text" placeholder="Masukkan nama penulis buku"/>
+									<small class="error-display" id="errorAuthor">*Wajib Diisi</small>
+								</div>
+								<div class="input select-none" id="sectionYear">
+									<label>Tahun</label>
+									<input id="inputBookYear" type="number" placeholder="Masukkan tahun terbit buku"/>
+									<small class="error-display" id="errorYear">*Wajib Diisi</small>
+								</div>
+								<div class="form-actions">
+									<div class="checkbox select-none">
+										<label>Selesai dibaca</label>
+										<input id="inputBookIsComplete" type="checkbox" />
+									</div>
+									<button id="bookSubmit" class="select-none" type="button">
+										<img class="add-icon" style="top:10px;" src="assets/img/add-icon.png" alt="add-icon">
+										&nbsp;&nbsp;<span>Masukkan Buku</span>
+									</button>
+								</div>
+							</form>
+						</section>
+					</article>
 				
-			<div class="col">
-				<article class="article-3">
-					<section>
-						<h2 class="select-none">Cari Buku</h2><hr/>
-						<form>
-							<label class="select-none">Keyword</label>
-							<input id="searchBookTitle" class="select-none" type="text" placeholder="Pencarian Data"/>
-							<button id="searchSubmit" class="select-none" type="submit">
-								<img class="search-icon" src="assets/img/search-icon.png" alt="search-icon">
-								<span>Cari</span>
-							</button>
-						</form>
-						<div id="searchResult" class="book_list"></div>
-					</section>
-				</article>
+					<article class="article-2">
+						<section>
+							<h2 class="select-none">Belum selesai dibaca</h2><hr/>			
+							<div id="incompleteBookshelfList" class="book_list"></div>
+						</section>
+					</article>
+				</div>
+					
+				<div class="col">
+					<article class="article-3">
+						<section>
+							<h2 class="select-none">Cari Buku</h2><hr/>
+							<form>
+								<label class="select-none">Keyword</label>
+								<input id="searchBookTitle" class="select-none" type="text" placeholder="Pencarian Data"/>
+								<button id="searchSubmit" class="select-none" type="submit">
+									<img class="search-icon" src="assets/img/search-icon.png" alt="search-icon">
+									<span>Cari</span>
+								</button>
+							</form>
+							<div id="searchResult" class="book_list"></div>
+						</section>
+					</article>
 
-				<article class="article-4">
-					<section>
-						<h2 class="select-none">Selesai dibaca</h2><hr/>
-						<div id="completeBookshelfList" class="book_list"></div>
-					</section>
-				</article>
+					<article class="article-4">
+						<section>
+							<h2 class="select-none">Selesai dibaca</h2><hr/>
+							<div id="completeBookshelfList" class="book_list"></div>
+						</section>
+					</article>
+				</div>
 			</div>
-		</div>
-	</main>
+		</main>
+		
+		<footer>
+			<div class="footer-container">
+				<div class="footer-left select-none">
+					<p>Copyright &copy; 2021 | All rights Reserved. Bookshelf Apps</p>
+				</div>
+				<div class="footer-right">
+					<input type="image" class="scrollup select-none" onclick="myScrollup()" id="scrollup" title="Go to top" src="assets/img/scroll-up.gif" alt="scroll-up">
+				</div>
+			</div>
+		</footer>
 
-	
-	<!-- FOOTER -->
-	<footer>
-		<article class="container-footer">
-			<table>
-				<tr>
-					<td class="cf-left">
-						<label class="select-none">Copyright &copy; 2021 | All rights Reserved. Bookshelf Apps</label>
-					</td>
-					<td class="cf-right">
-						<div class="scroll-w">
-							<input type="image" class="scrollup select-none" onclick="myScrollup()" id="scrollup" title="Go to top" src="assets/img/scroll-up.gif" alt="scroll-up"></input>
-						</div>
-					</td>
-				</tr>
-			</table>
-		</article>
-	</footer>
-
-	<script src="assets/js/main.js"></script>
-	<script src="assets/js/crd.js"></script>
-	<script src="assets/js/search.js"></script>
-	<script src="assets/js/swap.js"></script>
-	<script src="assets/js/scrollup.js"></script>
-</body>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/crd.js"></script>
+		<script src="assets/js/search.js"></script>
+		<script src="assets/js/swap.js"></script>
+		<script src="assets/js/scrollup.js"></script>
+	</body>
 </html>

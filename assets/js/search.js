@@ -33,7 +33,7 @@ function showSearchResult(books) {
         searchResult.innerHTML = `
             <article class="book_item">
                 <h3>Hasil Pencarian :</h3>
-                <p class="not-found">Data yang anda cari tidak ditemukan.</p>
+                <p class="not-found">Data tidak ditemukan.</p>
                 <p class="text-muted"><em>*Coba periksa kembali kata kunci pencarian Anda.</em></p>
             </article>
         `;
@@ -44,7 +44,7 @@ function showSearchResult(books) {
         let el = `
         <article class="book_item">
             <h3>Hasil Pencarian :</h3>
-            <p class="search">Pencarian menunjukkan bahwa data berasal dari buku "${book.title}" </p>
+            <p class="search">Buku "${book.title}" ditemukan.</p><br/>
             <h3>${book.title}</h3>
             <p>Penulis: ${book.author}</p>
             <p>Tahun: ${book.year}</p>

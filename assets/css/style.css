@@ -10,6 +10,22 @@ html {
 
 html, body {
   height: 100%;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(-45deg, rgba(255, 102, 0, 0.6), rgba(180, 182, 67, 0.8));
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+input, button {
+  font-size: 16px;
+  font-family: inherit;
 }
 
 h1, h2 {
@@ -19,6 +35,12 @@ h1, h2 {
 h2 {
   color: rgb(0, 0, 0);
   padding-top: 20px;
+}
+
+.text-muted {
+  color: #272b2dff;
+  font-size: 0.9rem;
+  margin-top: 5px;
 }
 
 hr {
@@ -38,7 +60,10 @@ hr {
   margin: 0 auto;
 }
 
-.add-icon, .search-icon, .agree-icon, .disagree-icon {
+.add-icon,
+.search-icon,
+.agree-icon,
+.disagree-icon {
   height: 20px;
   width: 18px;
   padding-top: 4px;
@@ -52,12 +77,6 @@ hr {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-}
-
-.text-muted {
-  color: #272b2dff;
-  font-size: 0.9rem;
-  margin-top: 5px;
 }
 
 .row {
@@ -74,24 +93,6 @@ hr {
   flex-direction: column;
   gap: 25px;
   min-width: 300px;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background: linear-gradient(-45deg, rgba(255, 102, 0, 0.6), rgba(180, 182, 67, 0.8));
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-body, input, button {
-  font-family: "Open Sans", sans-serif;
-}
-
-input, button {
-  font-size: 16px;
 }
 
 header {
@@ -113,13 +114,13 @@ header {
 
 .navbar {
   position: sticky;
+  top: 0;
+  z-index: 999;
   font-size: 15px;
-  color: white;
   font-weight: bold;
   text-align: center;
+  color: white;
   background: linear-gradient(-45deg, rgba(143, 83, 255), rgba(255, 0, 149));
-  z-index: 999;
-  top: 0;
   padding: 5px;
 }
 
@@ -133,9 +134,9 @@ main {
   padding: 25px;
 }
 
-.article-1, .article-3, .article-2, .article-4 {
+.article-1, .article-2, .article-3, .article-4 {
   width: 100%;
-  min-height: 420px;
+  min-height: 520px;
   height: auto;
   text-align: justify;
   justify-content: space-between;
@@ -146,18 +147,26 @@ main {
   padding: 10px;
 }
 
-.article-2, .article-4 {
+.article-1, .article-2, .article-3, .article-4 {
   flex: 1;
 }
 
+.article-1 > section {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 
-/* Container article-1 */
 .article-1 > section > form {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
   padding: 10px;
 }
 
 .article-1 > section > form > .input {
   margin: 8px 0;
+  margin-bottom: 20px;
 }
 
 .article-1 > section > form > .input > label {
@@ -172,10 +181,6 @@ main {
   border-radius: 5px;
 }
 
-.error {
-  border: 2px solid red;
-}
-
 .article-1 > section > form > .input > small {
   color: red;
 }
@@ -184,20 +189,30 @@ main {
   display: none;
 }
 
-.article-1 > section > form > .checkbox {
+.error {
+  border: 2px solid red;
+}
+
+.article-1 > section > form > .form-actions {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.article-1 > section > form > .form-actions > .checkbox {
   display: flex;
   align-items: center;
-  margin-top: 40px;
   gap: 10px;
   color: rgb(0, 0, 0);
   font-weight: bold;
 }
 
-.article-1 > section > form > button {
+.article-1 > section > form > .form-actions > button {
   display: block;
   width: 100%;
   padding: 8px;
-  margin-top: 15px;
+  margin-top: 5px;
   color: white;
   font-weight: bold;
   border: 0;
@@ -206,12 +221,10 @@ main {
   cursor: pointer;
 }
 
-.article-1 > section > form > button:hover {
+.article-1 > section > form > .form-actions > button:hover {
   border: 2px rgb(0, 225, 255) solid;
 }
 
-
-/* Container article-2 dan article-4 */
 .article-2 > section,
 .article-4 > section {
   display: flex;
@@ -227,29 +240,25 @@ main {
   font-weight: bold;
 }
 
-.article-2 > section > .book_list,
-.article-4 > section > .book_list {
+.book_list {
   width: 100%;
   padding: 16px;
 }
 
-.article-2 > section > .book_list > .book_item,
-.article-4 > section > .book_list > .book_item {
+.book_item {
   padding: 8px 16px 16px 16px;
   border: 1px solid black;
   border-radius: 5px;
   margin: 10px 0;
 }
 
-.article-2 > section > .book_list > .book_item > h3, p,
-.article-4 > section > .book_list > .book_item > h3, p {
+.book_item h3, .book_item p {
   margin: 8px 0;
   overflow: hidden;
   word-wrap: break-word;
 }
 
-.article-2 > section > .book_list > .book_item > .action > button,
-.article-4 > section > .book_list > .book_item > .action > button {
+.book_item > .action > button {
   border: 0;
   padding: 5px;
   margin: 0 5px 0 0;
@@ -257,37 +266,29 @@ main {
   cursor: pointer;
 }
 
-/* Tombol "Selesai dibaca" dan "Belum selesai dibaca" */
-.article-2 > section > .book_list > .book_item > .action > .green,
-.article-4 > section > .book_list > .book_item > .action > .green {
+.book_item > .action > button.green {
   background: linear-gradient(-45deg, rgba(43, 81, 112), rgb(7, 146, 65));
   border: 2px black solid;
   color: white;
+  margin-top: 0;
 }
 
-/* Hover Tombol untuk "Selesai dibaca" dan "Belum selesai dibaca" */
-.article-2 > section > .book_list > .book_item > .action > .green:hover,
-.article-4 > section > .book_list > .book_item > .action > .green:hover {
+.green:hover {
   border: 2px rgb(0, 255, 42) solid;
 }
 
-/* Tombol "Hapus buku" */
-.article-2 > section > .book_list > .book_item > .action > .red,
-.article-4 > section > .book_list > .book_item > .action > .red {
+.book_item > .action > button.red {
   background: linear-gradient(-45deg, rgba(43, 81, 112), rgb(221, 32, 11));
   border: 2px black solid;
   color: white;
-  margin-top: 10px;
+  margin-top: 0;
 }
 
-/* Hover untuk Tombol "Hapus buku" */
-.article-2 > section > .book_list > .book_item > .action > .red:hover,
-.article-4 > section > .book_list > .book_item > .action > .red:hover {
+.red:hover {
   border: 2px rgb(218, 15, 0) solid;
 }
 
-.article-2 > section > .book_list > .book_item > .p-empty,
-.article-4 > section > .book_list > .book_item > .p-empty {
+.p-empty {
   font-size: 14px;
   color: white;
   text-align: center;
@@ -297,7 +298,6 @@ main {
   border-radius: 5px;
 }
 
-/* Container article-3 */
 .article-3 > section > form {
   display: grid;
   grid-template-columns: auto 1fr 0.5fr;
@@ -336,70 +336,35 @@ main {
   border: 2px rgb(0, 225, 255) solid;
 }
 
-.article-3 > section > .book_list {
-  width: 100%;
-  padding: 16px;
-}
-
-.article-3 > section > .book_list > .book_item {
-  padding: 8px 16px 16px 16px;
-  border: 1px solid black;
-  border-radius: 5px;
-  margin: 10px 0;
-}
-
-.article-3 > section > .book_list > .book_item > h3,
-p {
-  margin: 8px 0;
-  overflow: hidden;
-  word-wrap: break-word;
-}
-
-.article-3 > section > .book_list > .book_item > .action > button {
-  border: 0;
-  padding: 5px;
-  margin: 0 5px 0 0;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.article-3 > section > .book_list > .book_item > .ket {
-  text-align: left;
-}
-
-.article-3 > section > .book_list > .book_item > .ket > span {
+.ket > span {
   line-height: 2;
   font-size: 14px;
   border-radius: 40px;
   padding: 1px 8px;
   display: inline-block;
   color: white;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
   margin-top: 8px;
 }
 
-.article-3 > section > .book_list > .book_item > .ket > span.sudah {
+.ket > span.sudah {
   background: linear-gradient(-45deg, rgba(43,81,112,1), rgb(7,146,65));
 }
 
-.article-3 > section > .book_list > .book_item > .ket > span.belum {
+.ket > span.belum {
   background: linear-gradient(-45deg, rgba(43,81,112,1), rgb(221,32,11));
 }
 
-.article-3 > section > .book_list > .book_item > .search {
+.search {
   margin-bottom: 15px;
   padding: 10px;
   background: linear-gradient(-45deg, rgba(45, 122, 255, 1), rgba(43, 81, 112));
   font-size: 14px;
   border-radius: 5px;
   color: white;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
   text-align: left;
 }
 
-.article-3 > section > .book_list > .book_item > .not-found {
+.not-found {
   padding: 10px;
   background: linear-gradient(-45deg, rgba(43,81,112,1), rgb(221,32,11));
   font-size: 14px;
@@ -407,46 +372,32 @@ p {
   color: white;
 }
 
-.article-3 > section > .book_list > .book_item > .action > .green {
-  background: linear-gradient(-45deg, rgba(43, 81, 112), rgb(7, 146, 65));
-  border: 2px black solid;
-  color: white;
-}
-
-.article-3 > section > .book_list > .book_item > .action > .red {
-  background: linear-gradient(-45deg, rgba(43, 81, 112), rgb(221, 32, 11));
-  border: 2px black solid;
-  color: white;
-  margin-top: 10px;
-}
-
-.article-3 > section > .book_list > .book_item > .action > .green:hover {
-  border: 2px rgb(0, 255, 42) solid;
-}
-
-.article-3 > section > .book_list > .book_item > .action > .red:hover {
-  border: 2px rgb(218, 15, 0) solid;
-}
-
-
-/* Container footer */
 footer {
+  position: relative;
   flex-shrink: 0;
   padding: 20px;
   color: white;
   background: linear-gradient(-45deg, rgba(255, 94, 0, 0.6), rgba(170, 0, 0, 0.8));
-  text-align: center;
   font-weight: bold;
 }
 
-.cf-left {
-  width: 98%;
-  padding-right: 50px;
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
 }
 
-.cf-right {
-  width: 2%;
-  z-index: 998;
+.footer-left {
+  text-align: center;
+  flex: 1;
+}
+
+.footer-right {
+  flex: none;
+  margin-left: auto;
 }
 
 .scrollup {
@@ -454,17 +405,15 @@ footer {
   height: 52px;
   width: 52px;
   border-radius: 15px;
+  cursor: pointer;
 }
 
 .scrollup:hover {
   border: solid 2px black;
-  border-radius: 15px;
 }
 
-
-/* Tampilan Tablet */
-@media screen and (max-width: 900px) {
-  .book_shelf > .book_list > .book_item > .search {
+@media screen and (max-width: 912px) {
+  .book_shelf .book_item .search {
     font-size: 13px;
     padding: 8px;
   }
@@ -485,15 +434,16 @@ footer {
     padding: 8px;
     text-align: center;
   }
+
+  .book_item > .action > button.red {
+    margin-top: 10px;
+  }
 }
 
-
-/* Tampilan Mobile */
 @media screen and (max-width: 600px) {
   .header-wrap {
     font-size: 16px;
     padding: 15px 10px;
-    text-align: center;
   }
 
   .header-wrap h1 {
@@ -522,16 +472,10 @@ footer {
   }
 
   main {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    gap: 15px;
+    padding: 25px;
   }
 
-  .left-column, .right-column {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  .col {
     width: 100%;
   }
 
@@ -539,18 +483,14 @@ footer {
     width: 100%;
     max-width: 100%;
     min-height: auto;
-    padding: 10px;
-    box-sizing: border-box;
   }
 
   .article-1 > section > form,
   .article-3 > section > form {
-    display: flex;
     flex-direction: column;
-    gap: 10px;
   }
 
-  .book_shelf > .book_list > .book_item > .search {
+  .book_shelf .book_item .search {
     font-size: 12px;
     padding: 6px;
   }
@@ -559,8 +499,12 @@ footer {
     line-height: 2;
   }
 
-  .book_shelf > .book_list > .book_item > .action > .green,
-  .book_shelf > .book_list > .book_item > .action > .red {
+  .green,
+  .red {
     width: 100%;
+  }
+
+  .book_item > .action > button.red {
+    margin-top: 10px;
   }
 }
