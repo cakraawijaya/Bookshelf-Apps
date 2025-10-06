@@ -59,10 +59,11 @@ Learn Front End Web Development for Beginners.
 ## Highlights
 <table>
 <tr>
-<th width="840">Bookshelf-Apps by Devan</th>
+<th colspan="2">Bookshelf App Display</th>
 </tr>
 <tr>
-<td><img src="assets/documentation/Bookshelf-Apps.jpg" alt="bookshelf-apps"></td>
+<td width="420"><img src="assets/documentation/Bookshelf Apps-1.jpg" alt="bookshelf-apps-1"></td>
+<td width="420"><img src="assets/documentation/Bookshelf Apps-2.jpg" alt="bookshelf-apps-2"></td>
 </tr>
 </table>
 
