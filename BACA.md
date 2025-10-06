@@ -59,7 +59,7 @@ Belajar Pengembangan Web Front End untuk Pemula.
 ## Sorotan
 <table>
 <tr>
-<th colspan="2">Tampilan Bookshelf App</th>
+<th colspan="2">Tampilan Aplikasi Rak Buku</th>
 </tr>
 <tr>
 <td width="420"><img src="assets/documentation/Bookshelf_Apps_1.jpg" alt="bookshelf-apps-1"></td>
