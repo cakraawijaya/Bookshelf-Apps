@@ -59,10 +59,15 @@ Belajar Pengembangan Web Front End untuk Pemula.
 ## Sorotan
 <table>
 <tr>
-<th width="840">Bookshelf-Apps versi Devan</th>
+<th colspan="2">Tampilan Bookshelf App</th>
 </tr>
 <tr>
-<td><img src="assets/documentation/Bookshelf-Apps.jpg" alt="bookshelf-apps"></td>
+<td width="420"><img src="assets/documentation/Bookshelf_Apps_1.jpg" alt="bookshelf-apps-1"></td>
+<td width="420"><img src="assets/documentation/Bookshelf_Apps_2.jpg" alt="bookshelf-apps-2"></td>
+</tr>
+<tr>
+<td width="420"><img src="assets/documentation/Bookshelf_Apps_3.jpg" alt="bookshelf-apps-3"></td>
+<td width="420"><img src="assets/documentation/Bookshelf_Apps_4.jpg" alt="bookshelf-apps-4"></td>
 </tr>
 </table>
 
