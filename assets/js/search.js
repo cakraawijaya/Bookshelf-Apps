@@ -44,14 +44,14 @@ function showSearchResult(books) {
         let el = `
         <article class="book_item">
             <h3>Hasil Pencarian :</h3>
-            <p class="search">Buku "${book.title}" ditemukan.</p><br/>
-            <h3>${book.title}</h3>
+            <p class="search">Buku "<strong><u>${book.title}</u></strong>" ditemukan.</p>
+            <h3 class="title">${book.title}</h3>
             <p class="author">Penulis: ${book.author}</p>
             <p class="year">Tahun: ${book.year}</p>
             <p class="ket">
                 Keterangan : 
                 <span class="${book.isCompleted ? 'sudah' : 'belum'}">
-                    ${book.isCompleted ? 'Sudah dibaca' : 'Belum selesai dibaca'}
+                    ${book.isCompleted ? '<strong>Sudah dibaca</strong>' : '<strong>Belum selesai dibaca</strong>'}
                 </span>
             </p>
         </article>

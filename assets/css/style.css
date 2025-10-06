@@ -32,6 +32,10 @@ h1, h2 {
   text-align: center;
 }
 
+h1 {
+  padding: 8px;
+}
+
 h2 {
   color: rgb(0, 0, 0);
   padding-top: 20px;
@@ -85,9 +89,9 @@ hr {
 }
 
 .col {
-  flex: 1 1 45%;
   display: flex;
   flex-direction: column;
+  flex: 1 1 45%;
   gap: 25px;
   min-width: 300px;
 }
@@ -119,12 +123,13 @@ header {
   color: white;
   background: linear-gradient(-45deg, rgba(143, 83, 255), rgba(255, 0, 149));
   padding: 5px;
+  line-height: 2;
 }
 
 main {
-  flex: 1;
   display: flex;
   flex-direction: column;
+  flex: 1;
   justify-content: flex-start;
   width: 100%;
   margin: 0 auto;
@@ -133,8 +138,8 @@ main {
 
 .article-1, .article-2, .article-3, .article-4 {
   width: 100%;
-  min-height: 520px;
   height: auto;
+  min-height: 550px;
   text-align: justify;
   justify-content: space-between;
   border: 5px solid;
@@ -144,7 +149,7 @@ main {
   padding: 10px;
 }
 
-.article-1, .article-2, .article-3, .article-4 {
+.article-2, .article-4 {
   flex: 1;
 }
 
@@ -154,10 +159,10 @@ main {
   height: 100%;
 }
 
-.article-1 > section > form {
+.article-1 > section > form {  
   display: flex;
   flex-direction: column;
-  flex: 1 1 auto;
+  flex: 1;
   padding: 10px;
 }
 
@@ -192,6 +197,7 @@ main {
 
 .article-1 > section > form > .form-actions {
   margin-top: auto;
+  margin-bottom: 18px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -290,6 +296,7 @@ main {
 .p-empty {
   font-size: 14px;
   color: white;
+  font-weight: bold;
   text-align: center;
   margin: 10px 0;
   padding: 26px;
@@ -340,6 +347,22 @@ main {
   border: 2px rgb(0, 225, 255) solid;
 }
 
+.article-3 > section > .book_list .book_item .search {
+  padding: 10px;
+  background: linear-gradient(-45deg, rgba(45, 122, 255, 1), rgba(43, 81, 112));
+  font-size: 14px;
+  border-radius: 5px;
+  color: white;
+}
+
+.article-3 > section > .book_list .book_item .title {
+  margin-top: 25px;
+}
+
+.ket {
+  text-align: left;
+}
+
 .ket > span {
   line-height: 2;
   font-size: 14px;
@@ -356,16 +379,6 @@ main {
 
 .ket > span.belum {
   background: linear-gradient(-45deg, rgba(43,81,112,1), rgb(221,32,11));
-}
-
-.search {
-  margin-bottom: 15px;
-  padding: 10px;
-  background: linear-gradient(-45deg, rgba(45, 122, 255, 1), rgba(43, 81, 112));
-  font-size: 14px;
-  border-radius: 5px;
-  color: white;
-  text-align: left;
 }
 
 .not-found {
@@ -418,6 +431,11 @@ footer {
 }
 
 @media screen and (max-width: 912px) {
+  .header-wrap p {
+    margin-top: 15px;
+    line-height: 1.5;
+  }
+
   .article-3 > section > form {
     display: flex;
     flex-direction: column;
@@ -466,6 +484,7 @@ footer {
     letter-spacing: 1px;
     margin-top: 5px;
     padding: 12px;
+    line-height: 1.7;
   }
 
   .navbar p {
@@ -539,12 +558,12 @@ footer {
     font-size: 15px;
   }
 
-  .article-3 > section > .book_list .search,
-  .article-3 > section > .book_list .not-found,
-  .article-3 > section > .book_list .author,
-  .article-3 > section > .book_list .year,
-  .article-3 > section > .book_list .ket,
-  .article-3 > section > .book_list .ket span {
+  .article-3 > section > .book_list .book_item .search,
+  .article-3 > section > .book_list .book_item .not-found,
+  .article-3 > section > .book_list .book_item .author,
+  .article-3 > section > .book_list .book_item .year,
+  .article-3 > section > .book_list .book_item .ket,
+  .article-3 > section > .book_list .book_item .ket span {
     font-size: 12px;
   }
 

@@ -35,8 +35,8 @@ function showData(books = []) {
         incompleteBooks.forEach(book => {
             let el = `
             <article class="book_item">
-                <h3 style="text-align:justify;">${book.title}</h3>
-                <p style="text-align:justify;">Penulis: ${book.author}</p>
+                <h3 style="text-align:left;">${book.title}</h3>
+                <p style="text-align:left;">Penulis: ${book.author}</p>
                 <p>Tahun: ${book.year}</p>
 
                 <div class="action" style="margin-top: 30px;">
@@ -70,8 +70,8 @@ function showData(books = []) {
         completeBooks.forEach(book => {
             let el = `
             <article class="book_item">
-                <h3 style="text-align:justify;">${book.title}</h3>
-                <p style="text-align:justify;">Penulis: ${book.author}</p>
+                <h3 style="text-align:left;">${book.title}</h3>
+                <p style="text-align:left;">Penulis: ${book.author}</p>
                 <p>Tahun: ${book.year}</p>
 
                 <div class="action" style="margin-top: 30px;">
