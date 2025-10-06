@@ -60,10 +60,7 @@ hr {
   margin: 0 auto;
 }
 
-.add-icon,
-.search-icon,
-.agree-icon,
-.disagree-icon {
+.add-icon, .search-icon, .agree-icon, .disagree-icon {
   height: 20px;
   width: 18px;
   padding-top: 4px;
@@ -215,7 +212,7 @@ main {
   margin-top: 5px;
   color: white;
   font-weight: bold;
-  border: 0;
+  border: 2px solid transparent;
   border-radius: 5px;
   background: linear-gradient(-45deg, rgba(43, 81, 112), rgb(0, 61, 192));
   cursor: pointer;
@@ -271,6 +268,7 @@ main {
   border: 2px black solid;
   color: white;
   margin-top: 0;
+  font-weight: bold;
 }
 
 .green:hover {
@@ -282,6 +280,7 @@ main {
   border: 2px black solid;
   color: white;
   margin-top: 0;
+  font-weight: bold;
 }
 
 .red:hover {
@@ -293,9 +292,10 @@ main {
   color: white;
   text-align: center;
   margin: 10px 0;
-  padding: 25px;
+  padding: 26px;
   background: linear-gradient(-45deg, rgba(43,81,112,1), rgb(221,32,11));
   border-radius: 5px;
+  line-height: 2;
 }
 
 .article-3 > section > form {
@@ -313,23 +313,27 @@ main {
   color: rgb(0, 0, 0);
   font-weight: bold;
   margin-right: 10px;
-  margin-top: 8px;
+  margin-top: 5px;
 }
 
 .article-3 > section > form > input {
   padding: 5px;
-  margin-top: 8px;
+  margin-top: 5px;
   border-radius: 5px;
 }
 
 .article-3 > section > form > button {
+  display: block;
+  width: 100%;
+  padding: 8px;
   background: linear-gradient(-45deg, rgba(43, 81, 112), rgb(0, 61, 192));
-  border: 0;
+  border: 2px solid transparent;
   border-radius: 5px;
   color: white;
   display: block;
   cursor: pointer;
-  margin-top: 8px;
+  margin-top: 5px;
+  font-weight: bold;
 }
 
 .article-3 > section > form > button:hover {
@@ -379,6 +383,7 @@ footer {
   color: white;
   background: linear-gradient(-45deg, rgba(255, 94, 0, 0.6), rgba(170, 0, 0, 0.8));
   font-weight: bold;
+  line-height: 2;
 }
 
 .footer-container {
@@ -413,26 +418,18 @@ footer {
 }
 
 @media screen and (max-width: 912px) {
-  .book_shelf .book_item .search {
-    font-size: 13px;
-    padding: 8px;
-  }
-
-  #searchBookTitle {
-    line-height: 2;
-  }
-
   .article-3 > section > form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
   }
 
-  .article-3 > section > form > button {
+  .article-3 > section > form > input {
+    line-height: 2;
+  }
+
+  .green, .red {
     width: 100%;
-    line-height: 1;
-    padding: 8px;
-    text-align: center;
   }
 
   .book_item > .action > button.red {
@@ -441,12 +438,16 @@ footer {
 }
 
 @media screen and (max-width: 600px) {
+  h2{
+    font-size: 18px;
+  }
+
   .header-wrap {
     font-size: 16px;
     padding: 15px 10px;
   }
 
-  .header-wrap h1 {
+  .header-wrap > h1 {
     font-size: 20px;
     display: flex;
     flex-direction: column;
@@ -464,6 +465,7 @@ footer {
     font-size: 13px;
     letter-spacing: 1px;
     margin-top: 5px;
+    padding: 12px;
   }
 
   .navbar p {
@@ -479,32 +481,105 @@ footer {
     width: 100%;
   }
 
+  .add-icon, .search-icon, .agree-icon, .disagree-icon {
+    height: 16px;
+    width: 12px;
+  }
+
   .article-1, .article-2, .article-3, .article-4 {
     width: 100%;
     max-width: 100%;
     min-height: auto;
   }
 
-  .article-1 > section > form,
-  .article-3 > section > form {
-    flex-direction: column;
+  .article-1 > section > form > .input > label {
+    font-size: 15px;
   }
 
-  .book_shelf .book_item .search {
+  .article-1 > section > form > .input > input {
     font-size: 12px;
-    padding: 6px;
   }
 
-  #searchBookTitle, #searchSubmit {
+  .article-1 > section > form > .form-actions > .checkbox {
+    font-size: 15px;
+  }
+
+  .article-1 > section > form > .form-actions > button {
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .article-2 .book_list .book_item > h3 {
+    font-size: 15px;
+  }
+
+  .article-2 .book_list .book_item > p {
+    font-size: 12px;
+  }
+
+  .article-2 .book_list .book_item .action > button {
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .article-3 > section > form > label {
+    font-size: 15px;
+  }
+
+  .article-3 > section > form > input {
+    font-size: 12px;
+  }
+
+  .article-3 > section > form > button {
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .article-3 > section > .book_list h3 {
+    font-size: 15px;
+  }
+
+  .article-3 > section > .book_list .search,
+  .article-3 > section > .book_list .not-found,
+  .article-3 > section > .book_list .author,
+  .article-3 > section > .book_list .year,
+  .article-3 > section > .book_list .ket,
+  .article-3 > section > .book_list .ket span {
+    font-size: 12px;
+  }
+
+  .article-3 > section > .book_list .text-muted {
+    font-size: 10px;
+  }
+
+  .article-4 .book_list .book_item > h3 {
+    font-size: 15px;
+  }
+
+  .article-4 .book_list .book_item > p {
+    font-size: 12px;
+  }
+
+  .article-4 .book_list .book_item .action > button {
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .p-empty {
+    font-size: 12px;
+    padding: 13px;
     line-height: 2;
   }
 
-  .green,
-  .red {
+  .green, .red {
     width: 100%;
   }
 
   .book_item > .action > button.red {
     margin-top: 10px;
+  }
+
+  footer {
+    font-size: 15px;
   }
 }

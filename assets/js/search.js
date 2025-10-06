@@ -46,8 +46,8 @@ function showSearchResult(books) {
             <h3>Hasil Pencarian :</h3>
             <p class="search">Buku "${book.title}" ditemukan.</p><br/>
             <h3>${book.title}</h3>
-            <p>Penulis: ${book.author}</p>
-            <p>Tahun: ${book.year}</p>
+            <p class="author">Penulis: ${book.author}</p>
+            <p class="year">Tahun: ${book.year}</p>
             <p class="ket">
                 Keterangan : 
                 <span class="${book.isCompleted ? 'sudah' : 'belum'}">
