@@ -2,108 +2,133 @@ const localStorageKey = "BOOKS_DATA";
 
 const title = document.querySelector("#inputBookTitle");
 const errorTitle = document.querySelector("#errorTitle");
-const sectionTitle = document.querySelector("#sectionTitle");
 
 const author = document.querySelector("#inputBookAuthor");
 const errorAuthor = document.querySelector("#errorAuthor");
-const sectionAuthor = document.querySelector("#sectionAuthor");
 
 const year = document.querySelector("#inputBookYear");
 const errorYear = document.querySelector("#errorYear");
-const sectionYear = document.querySelector("#sectionYear");
 
 const readed = document.querySelector("#inputBookIsComplete");
-
 const btnSubmit = document.querySelector("#bookSubmit");
+
 
 const searchValue = document.querySelector("#searchBookTitle");
 const btnSearch = document.querySelector("#searchSubmit");
 
-let checkInput = [];
-let checkTitle = "";
-let checkAuthor = "";
-let checkYear = "";
 
-window.addEventListener("load", function(){
-    if (localStorage.getItem(localStorageKey) !== "") {    
-        const booksData = getData();
-        showData(booksData);
+function setCurrentYear() {
+    const yearElement = document.getElementById('currentYear');
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
     }
-})
+}
 
-btnSubmit.addEventListener("click", function() {
-    if (btnSubmit.value == "") {
-        checkInput = [];
 
-        title.classList.remove("error");
-        author.classList.remove("error");
-        year.classList.remove("error");
+function validateForm() {
+    let isValid = true;
 
-        errorTitle.classList.add("error-display");
-        errorAuthor.classList.add("error-display");
-        errorYear.classList.add("error-display");
+    // Reset error
+    title.classList.remove("error");
+    author.classList.remove("error");
+    year.classList.remove("error");
 
-        if (title.value == "") {
-            checkTitle = false;
-        }else{
-            checkTitle = true;
-        }
+    errorTitle.classList.add("error-display");
+    errorAuthor.classList.add("error-display");
+    errorYear.classList.add("error-display");
 
-        if (author.value == "") {
-            checkAuthor = false;
-        }else{
-            checkAuthor = true;
-        }
-
-        if (year.value == "") {
-            checkYear = false;
-        }else{
-            checkYear = true;
-        }
-
-        checkInput.push(checkTitle,checkAuthor,checkYear);
-        let resultCheck = validation(checkInput);
-
-        if (resultCheck.includes(false)) {
-            return false;
-        }else{
-            const newBook = {
-                id: +new Date(),
-                title: title.value.trim(),
-                author: author.value.trim(),
-                year: year.value,
-                isCompleted: readed.checked
-            }
-            insertData(newBook);
-
-            title.value = '';
-            author.value = '';
-            year.value = '';
-            readed.checked = false;
-        }    
+    if (title.value.trim() === "") {
+        title.classList.add("error");
+        errorTitle.classList.remove("error-display");
+        isValid = false;
     }
-})
 
-function validation(check) {
-    let resultCheck = [];
-    
-    check.forEach((a,i) => {
-        if (a == false) {
-            if (i == 0) {
-                title.classList.add("error");
-                errorTitle.classList.remove("error-display");
-                resultCheck.push(false);
-            }else if (i == 1) {
-                author.classList.add("error");
-                errorAuthor.classList.remove("error-display");
-                resultCheck.push(false);
-            }else{
-                year.classList.add("error");
-                errorYear.classList.remove("error-display");
-                resultCheck.push(false);
-            }
+    if (author.value.trim() === "") {
+        author.classList.add("error");
+        errorAuthor.classList.remove("error-display");
+        isValid = false;
+    }
+
+    if (year.value.trim() === "") {
+        year.classList.add("error");
+        errorYear.classList.remove("error-display");
+        isValid = false;
+    }
+
+    return isValid;
+}
+
+
+function getData() {
+    const data = localStorage.getItem(localStorageKey);
+    return data ? JSON.parse(data) : [];
+}
+
+
+function saveData(data) {
+    localStorage.setItem(localStorageKey, JSON.stringify(data));
+}
+
+
+function insertData(newBook) {
+    const booksData = getData();
+    booksData.push(newBook);
+    saveData(booksData);
+    showData(booksData);
+}
+
+
+function showData(books) {
+    const listIncomplete = document.getElementById("incompleteBookshelfList");
+    const listComplete = document.getElementById("completeBookshelfList");
+
+    if (!listIncomplete || !listComplete) return;
+
+    listIncomplete.innerHTML = "";
+    listComplete.innerHTML = "";
+
+    books.forEach(book => {
+        const bookItem = document.createElement("article");
+        bookItem.classList.add("book_item");
+        bookItem.innerHTML = `
+            <h3>${book.title}</h3>
+            <p>Author: ${book.author}</p>
+            <p>Year: ${book.year}</p>
+        `;
+
+        if (book.isCompleted) {
+            listComplete.appendChild(bookItem);
+        } else {
+            listIncomplete.appendChild(bookItem);
         }
     });
-
-    return resultCheck;
 }
+
+
+window.addEventListener("load", function() {
+    setCurrentYear();
+
+    const booksData = getData();
+    showData(booksData);
+});
+
+btnSubmit.addEventListener("click", function(e) {
+    e.preventDefault();
+
+    if (validateForm()) {
+        const newBook = {
+            id: +new Date(),
+            title: title.value.trim(),
+            author: author.value.trim(),
+            year: year.value,
+            isCompleted: readed.checked
+        };
+
+        insertData(newBook);
+
+        title.value = "";
+        author.value = "";
+        year.value = "";
+        readed.checked = false;
+    }
+});

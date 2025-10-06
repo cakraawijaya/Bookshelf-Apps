@@ -33,17 +33,17 @@
 						<section>
 							<h2 class="select-none">Masukkan Buku Baru</h2><hr/>
 							<form>
-								<div class="input select-none" id="sectionTitle">
+								<div class="input select-none">
 									<label>Judul</label>
 									<input id="inputBookTitle" type="text" placeholder="Masukkan judul buku"/>
 									<small class="error-display" id="errorTitle">*Wajib Diisi</small>
 								</div>
-								<div class="input select-none" id="sectionAuthor">
+								<div class="input select-none">
 									<label>Penulis</label>
 									<input id="inputBookAuthor" type="text" placeholder="Masukkan nama penulis buku"/>
 									<small class="error-display" id="errorAuthor">*Wajib Diisi</small>
 								</div>
-								<div class="input select-none" id="sectionYear">
+								<div class="input select-none">
 									<label>Tahun</label>
 									<input id="inputBookYear" type="number" placeholder="Masukkan tahun terbit buku"/>
 									<small class="error-display" id="errorYear">*Wajib Diisi</small>
@@ -99,7 +99,7 @@
 		<footer>
 			<div class="footer-container">
 				<div class="footer-left select-none">
-					<p>Copyright &copy; 2021 | All rights Reserved. Bookshelf Apps</p>
+					<p>&copy; 2021-<span id="currentYear"></span> <strong>Bookshelf Apps</strong>. All rights Reserved.</p>
 				</div>
 				<div class="footer-right">
 					<input type="image" class="scrollup select-none" onclick="myScrollup()" id="scrollup" title="Go to top" src="assets/img/scroll-up.gif" alt="scroll-up">

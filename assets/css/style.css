@@ -226,6 +226,8 @@ main {
 
 .article-1 > section > form > .form-actions > button:hover {
   border: 2px rgb(0, 225, 255) solid;
+  transform: scale(1.01);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
 
 .article-2 > section,
@@ -279,6 +281,8 @@ main {
 
 .book_item > .action > button.green:hover {
   border: 2px rgb(0, 255, 42) solid;
+  transform: scale(1.01);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
 
 .book_item > .action > button.red {
@@ -291,6 +295,8 @@ main {
 
 .book_item > .action > button.red:hover {
   border: 2px rgb(218, 15, 0) solid;
+  transform: scale(1.01);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
 
 .p-empty {
@@ -345,6 +351,8 @@ main {
 
 .article-3 > section > form > button:hover {
   border: 2px rgb(0, 225, 255) solid;
+  transform: scale(1.01);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
 
 .article-3 > section > .book_list .book_item .search {
