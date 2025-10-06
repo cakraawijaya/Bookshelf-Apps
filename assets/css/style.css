@@ -277,7 +277,7 @@ main {
   font-weight: bold;
 }
 
-.green:hover {
+.book_item > .action > button.green:hover {
   border: 2px rgb(0, 255, 42) solid;
 }
 
@@ -289,7 +289,7 @@ main {
   font-weight: bold;
 }
 
-.red:hover {
+.book_item > .action > button.red:hover {
   border: 2px rgb(218, 15, 0) solid;
 }
 
