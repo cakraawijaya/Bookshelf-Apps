@@ -67,9 +67,8 @@ hr {
 .add-icon, .search-icon, .agree-icon, .disagree-icon {
   height: 20px;
   width: 18px;
+  fill: white;
   padding-top: 4px;
-  background-size: cover;
-  filter: invert(100%);
   margin: 0 auto;
 }
 
@@ -114,16 +113,24 @@ header {
 }
 
 .navbar {
-  position: sticky;
-  top: 0;
-  z-index: 999;
   font-size: 15px;
   font-weight: bold;
   text-align: center;
   color: white;
   background: linear-gradient(-45deg, rgba(143, 83, 255), rgba(255, 0, 149));
+  backdrop-filter: blur(10px);
+  transition: box-shadow 0.3s ease, background 0.3s ease, top 0.3s ease;
   padding: 5px;
   line-height: 2;
+  width: 100%;
+}
+
+.navbar.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 main {
